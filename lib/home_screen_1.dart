@@ -183,7 +183,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontWeight: FontWeight.w600),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              print("Play Button Clicked");
+                            },
                             style: TextButton.styleFrom(
                               backgroundColor: const Color(0xFF18152E),
                               shape: RoundedRectangleBorder(
