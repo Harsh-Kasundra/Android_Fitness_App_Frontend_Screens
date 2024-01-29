@@ -84,124 +84,122 @@ class _ActivityScreenState extends State<ActivityScreen> {
         ),
         body: Padding(
           padding: EdgeInsets.all(18.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Your Progress",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    Text(
-                      "See Details",
-                      style: TextStyle(color: Colors.white38, fontSize: 13),
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15, left: 5, right: 5),
-                child: Card(
-                  color: Colors.lightBlueAccent,
-                  child: Container(
-                    height: 160,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          "Progress Bar",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Great Your",
-                              style: TextStyle(color: Colors.white,fontSize: 20,fontWeight:FontWeight.w700),
-                            ),
-                            SizedBox(height: 3,),
-                            Text(
-                              "Daily Task Almost \nCompleted",
-                              style: TextStyle(color: Colors.white,fontSize: 12.5,fontWeight: FontWeight.w700),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 15,
-                  bottom: 15,
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      "January 2022",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Colors.red,
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    GetDateContainer(day: "S", date: "11"),
-                    GetDateContainer(day: "S", date: "12"),
-                    GetDateContainer(day: "M", date: "13"),
-                    GetDateContainer(day: "T", date: "14"),
-                    GetDateContainer(day: "W", date: "15"),
-                  ],
-                ),
-              ),
-              Text(
-                "Your Progress",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700),
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          getCard(0xFF5D79F2,Icons.local_fire_department_outlined, "Kcal Burnt", "321","Kcal"),
-                          getCard(0xFFF35F5F,Icons.monitor_heart, "Heart Rate", "60","Beats"),
-                        ],
+                      Text(
+                        "Your Progress",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700),
                       ),
-                      Row(
-                        children: [
-                          getCard(0xFF5BCAF2,Icons.directions_walk, "Steps", "5030","Steps"),
-                          getCard(0xFF2DD699,Icons.fitness_center, "Worked Out", "40","Min"),
-                        ],
+                      Text(
+                        "See Details",
+                        style: TextStyle(color: Colors.white38, fontSize: 13),
                       )
                     ],
                   ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 15, left: 5, right: 5),
+                  child: Card(
+                    color: Colors.lightBlueAccent,
+                    child: Container(
+                      height: 160,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            "Progress Bar",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Great Your",
+                                style: TextStyle(color: Colors.white,fontSize: 20,fontWeight:FontWeight.w700),
+                              ),
+                              SizedBox(height: 3,),
+                              Text(
+                                "Daily Task Almost \nCompleted",
+                                style: TextStyle(color: Colors.white,fontSize: 12.5,fontWeight: FontWeight.w700),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 15,
+                    bottom: 15,
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        "January 2022",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_down,
+                        color: Colors.red,
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const GetDateContainer(day: "S", date: "11"),
+                      const GetDateContainer(day: "S", date: "12"),
+                      const GetDateContainer(day: "M", date: "13"),
+                      const GetDateContainer(day: "T", date: "14"),
+                      const GetDateContainer(day: "W", date: "15"),
+                    ],
+                  ),
+                ),
+                Text(
+                  "Your Progress",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700),
+                ),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        getCard(0xFF5D79F2,Icons.local_fire_department_outlined, "Kcal Burnt", "321","Kcal"),
+                        getCard(0xFFF35F5F,Icons.monitor_heart, "Heart Rate", "60","Beats"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        getCard(0xFF5BCAF2,Icons.directions_walk, "Steps", "5030","Steps"),
+                        getCard(0xFF2DD699,Icons.fitness_center, "Worked Out", "40","Min"),
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

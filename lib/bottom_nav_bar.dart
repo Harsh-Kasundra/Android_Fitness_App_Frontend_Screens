@@ -13,9 +13,9 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   var indexValue = 0;
   List<Widget> pages = [
-    HomeScreen(),
-    WorkoutScreen(),
-    ActivityScreen()
+    const HomeScreen(),
+    const WorkoutScreen(),
+    const ActivityScreen()
   ];
 
   @override

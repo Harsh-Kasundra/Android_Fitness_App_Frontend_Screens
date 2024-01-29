@@ -1,5 +1,4 @@
 import 'package:clg_fitness_app/bottom_nav_bar.dart';
-import 'package:clg_fitness_app/home_screen_1.dart';
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatefulWidget {
@@ -139,112 +138,116 @@ class _SelectCategoryScreenState extends State<SelectCategoryScreen> {
         ),
         body: Column(
           children: [
-            const SizedBox(
-              height: 90,
-            ),
-            const Center(
-              child: Text(
-                "Select Your Favorite \n workout Category",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w600),
+            Expanded(
+              child: const Center(
+                child: Text(
+                  "Select Your Favorite \n workout Category",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w600),
+                ),
               ),
             ),
-            const SizedBox(height: 60),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/runner.png", text: "Running"),
-                ),
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/cycling.png", text: "Cycling"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/walking.png", text: "Walking"),
-                ),
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/skip-rope.png",
-                      text: "Overhead Extention"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/raise-hand.png", text: "Good Morning"),
-                ),
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/push-up.png", text: "Front Raise"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/squat.png", text: "Sitting"),
-                ),
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/bench-barbel.png", text: "Bench Press"),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/meditation.png", text: "Yoga"),
-                ),
-                Container(
-                  child: const CustomContainer(
-                      icon: "assets/icons/lying.png", text: "Lying"),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-            Center(
-              child: Container(
-                margin: const EdgeInsets.only(bottom: 70),
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const BottomNavBar(),
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/runner.png", text: "Running"),
                       ),
-                    );
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: const Color(0xFF3452Eb),
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(15), // Set border radius here
-                    ),
-                    minimumSize: const Size(350.0, 80),
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/cycling.png", text: "Cycling"),
+                      ),
+                    ],
                   ),
-                  child: const Text(
-                    "Continue",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/walking.png", text: "Walking"),
+                      ),
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/skip-rope.png",
+                            text: "Overhead Extention"),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/raise-hand.png", text: "Good Morning"),
+                      ),
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/push-up.png", text: "Front Raise"),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/squat.png", text: "Sitting"),
+                      ),
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/bench-barbel.png", text: "Bench Press"),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/meditation.png", text: "Yoga"),
+                      ),
+                      Container(
+                        child: const CustomContainer(
+                            icon: "assets/icons/lying.png", text: "Lying"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: Container(
+                  margin: const EdgeInsets.only(bottom: 70),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const BottomNavBar(),
+                        ),
+                      );
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFF3452Eb),
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(15), // Set border radius here
+                      ),
+                      minimumSize: const Size(350.0, 80),
+                    ),
+                    child: const Text(
+                      "Continue",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                      ),
                     ),
                   ),
                 ),

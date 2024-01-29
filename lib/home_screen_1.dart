@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+
+import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomContainer extends StatefulWidget {
@@ -63,7 +64,7 @@ class _CustomContainerState extends State<CustomContainer> {
 }
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -77,104 +78,107 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFF18152E),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-              // !HEADING
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: RichText(
-                text: TextSpan(
-                  text: 'Stay Healthy\nwith ',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w400),
-                  ),
-                  children: const <TextSpan>[
-                    TextSpan(
-                      text: 'Training',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Heading and Search Bar widgets...
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Stay Healthy\nwith ',
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w400),
                     ),
-                  ],
-                ),
-              ),
-            ),
-              // !SEARCH BAR
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Color(0xFF5065C1),
-                  prefixIcon: Icon(
-                    Icons.search_rounded,
-                    color: Colors.white60,
-                    size: 25,
-                  ),
-                  hintText: "Physical Training",
-                  hintStyle: TextStyle(color: Colors.white60, fontSize: 15),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.transparent),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10.0),
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.transparent),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10.0),
-                    ),
+                    children: const <TextSpan>[
+                      TextSpan(
+                        text: 'Training',
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
               ),
-            ),
-              // !CATEGORIES
-            const SizedBox(height: 5),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 8, 0, 8),
-              child: Text("Categories",
-                  style: GoogleFonts.robotoSlab(
-                      textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16))),
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomContainer(icon: "assets/icons/walking.png"),
-                CustomContainer(icon: "assets/icons/meditation.png"),
-                CustomContainer(icon: "assets/icons/yoga.png"),
-                CustomContainer(icon: "assets/icons/cycling.png"),
-                CustomContainer(icon: "assets/icons/bench-barbel.png"),
-              ],
-            ),
-            const SizedBox(height: 4),
-              // !TOP-TRAINING
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
-              child: Text("Top Trainings 💪🏻",
-                  style: GoogleFonts.robotoSlab(
-                      textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16))),
-            ),
-            Expanded(
-              child: Padding(
+              const Padding(
+                padding: EdgeInsets.all(15.0),
+                child: TextField(
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Color(0xFF5065C1),
+                    prefixIcon: Icon(
+                      Icons.search_rounded,
+                      color: Colors.white60,
+                      size: 25,
+                    ),
+                    hintText: "Physical Training",
+                    hintStyle: TextStyle(color: Colors.white60, fontSize: 15),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              // Categories
+              const SizedBox(height: 5),
+              // CustomContainer widgets...
+              const SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 8, 0, 8),
+                child: Text("Categories",
+                    style: GoogleFonts.robotoSlab(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16))),
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomContainer(icon: "assets/icons/walking.png"),
+                  CustomContainer(icon: "assets/icons/meditation.png"),
+                  CustomContainer(icon: "assets/icons/yoga.png"),
+                  CustomContainer(icon: "assets/icons/cycling.png"),
+                  CustomContainer(icon: "assets/icons/bench-barbel.png"),
+                ],
+              ),
+              const SizedBox(height: 4),
+              // Top Training
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+                child: Text("Top Trainings 💪🏻",
+                    style: GoogleFonts.robotoSlab(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16))),
+              ),
+              Padding(
                 padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
                 child: Card(
                   color: Color(0xFF6580F4),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 10, 0, 20),
+                        padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
                               "Functional \nTraining",
@@ -183,87 +187,91 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 26,
                                   fontWeight: FontWeight.w600),
                             ),
-                            TextButton(
-                              onPressed: () {
-                                print("Play Button Clicked");
-                              },
-                              style: TextButton.styleFrom(
-                                backgroundColor: const Color(0xFF18152E),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(
-                                      5), // Set border radius here
-                                ),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.play_arrow,
-                                    color: Colors.white,
+                            SizedBox(height: 40,),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 30),
+                              child: TextButton(
+                                onPressed: () {
+                                  print("Play Button Clicked");
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor: const Color(0xFF18152E),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                        5), // Set border radius here
                                   ),
-                                  Text("30 Min",
-                                      style: TextStyle(color: Colors.white))
-                                ],
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.play_arrow,
+                                      color: Colors.white,
+                                    ),
+                                    Text("30 Min",
+                                        style: TextStyle(color: Colors.white))
+                                  ],
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                      Expanded(
-                        child: Image.asset("assets/images/legup.png",
-                            height: 300, alignment: Alignment.centerRight),
-                      )
+                      Image.asset("assets/images/legup.png",
+                          height: 230, alignment: Alignment.centerRight),
                     ],
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 4),
-              // !RECOMMENDED CLASS
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
-              child: Text("Recommended Class",
-                  style: GoogleFonts.robotoSlab(
-                      textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16))),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Padding(
-                  padding: const EdgeInsets.all(25.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          getCard(0xFFFFB84C, "Functional Training", "25 min", "assets/images/triceps.png"),
-                          getCard(0xFFC4B0FF, "Functional Training", "25 min", "assets/images/triceps.png"),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          getCard(0xFF5FBDFF, "Functional Training", "25 min", "assets/images/triceps.png"),
-                          getCard(0xFF5C469C, "Functional Training", "25 min", "assets/images/triceps.png"),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          getCard(0xFFFF78F0, "Functional Training", "25 min", "assets/images/triceps.png"),
-                          getCard(0xFFC8FFD4, "Functional Training", "25 min", "assets/images/triceps.png"),
-                        ],
-                      ),
-                    ],
-                  ),
+
+              // Recommended Class
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+                child: Text("Recommended Class",
+                    style: GoogleFonts.robotoSlab(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16))),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        getCard(0xFFFFB84C, "Functional Training", "25 min",
+                            "assets/images/triceps.png"),
+                        getCard(0xFFC4B0FF, "Functional Training", "25 min",
+                            "assets/images/triceps.png"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        getCard(0xFF5FBDFF, "Functional Training", "25 min",
+                            "assets/images/triceps.png"),
+                        getCard(0xFF5C469C, "Functional Training", "25 min",
+                            "assets/images/triceps.png"),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        getCard(0xFFFF78F0, "Functional Training", "25 min",
+                            "assets/images/triceps.png"),
+                        getCard(0xFFC8FFD4, "Functional Training", "25 min",
+                            "assets/images/triceps.png"),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
-  Widget getCard(int color,String title,String time,String image){
+
+  Widget getCard(int color, String title, String time, String image) {
     return Expanded(
       child: Card(
         color: Color(color),

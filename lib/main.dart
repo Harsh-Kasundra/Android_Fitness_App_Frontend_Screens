@@ -1,8 +1,4 @@
-import 'package:clg_fitness_app/activity_screen_4.dart';
-import 'package:clg_fitness_app/home_screen_1.dart';
-import 'package:clg_fitness_app/select_category_screen_2.dart';
 import 'package:clg_fitness_app/splash_screen_page.dart';
-import 'package:clg_fitness_app/workout_screen_3.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreenPage(),
+      home: const SplashScreenPage(),
     );
   }
 }
