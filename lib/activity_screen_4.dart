@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class GetDateContainer extends StatefulWidget {
   final String day;
@@ -111,15 +112,37 @@ class _ActivityScreenState extends State<ActivityScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15, left: 5, right: 5),
                   child: Card(
-                    color: Colors.lightBlueAccent,
                     child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF7DC6D7),
+                            Color(0xFF87A4D6),
+                            Color(0xFF9893DF),
+                            Color(0xFF7078D3),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                      ),
                       height: 160,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(
-                            "Progress Bar",
-                            style: TextStyle(color: Colors.white),
+                          new CircularPercentIndicator(
+                            radius: 50.0,
+                            lineWidth: 13.0,
+                            percent: 0.80,
+                            center: new Text(
+                              "80%",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            progressColor: Color(0xFF283050),
+                            backgroundColor: Color(0xFF639FD4),
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,12 +150,20 @@ class _ActivityScreenState extends State<ActivityScreen> {
                             children: [
                               Text(
                                 "Great Your",
-                                style: TextStyle(color: Colors.white,fontSize: 20,fontWeight:FontWeight.w700),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700),
                               ),
-                              SizedBox(height: 3,),
+                              SizedBox(
+                                height: 3,
+                              ),
                               Text(
                                 "Daily Task Almost \nCompleted",
-                                style: TextStyle(color: Colors.white,fontSize: 12.5,fontWeight: FontWeight.w700),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12.5,
+                                    fontWeight: FontWeight.w700),
                               )
                             ],
                           )
@@ -186,14 +217,22 @@ class _ActivityScreenState extends State<ActivityScreen> {
                   children: [
                     Row(
                       children: [
-                        getCard(0xFF5D79F2,Icons.local_fire_department_outlined, "Kcal Burnt", "321","Kcal"),
-                        getCard(0xFFF35F5F,Icons.monitor_heart, "Heart Rate", "60","Beats"),
+                        getCard(
+                            0xFF5D79F2,
+                            Icons.local_fire_department_outlined,
+                            "Kcal Burnt",
+                            "321",
+                            "Kcal"),
+                        getCard(0xFFF35F5F, Icons.monitor_heart, "Heart Rate",
+                            "60", "Beats"),
                       ],
                     ),
                     Row(
                       children: [
-                        getCard(0xFF5BCAF2,Icons.directions_walk, "Steps", "5030","Steps"),
-                        getCard(0xFF2DD699,Icons.fitness_center, "Worked Out", "40","Min"),
+                        getCard(0xFF5BCAF2, Icons.directions_walk, "Steps",
+                            "5030", "Steps"),
+                        getCard(0xFF2DD699, Icons.fitness_center, "Worked Out",
+                            "40", "Min"),
                       ],
                     )
                   ],
@@ -205,7 +244,9 @@ class _ActivityScreenState extends State<ActivityScreen> {
       ),
     );
   }
-  Widget getCard(int color,IconData iconData,String name,String value_1,String value_2){
+
+  Widget getCard(int color, IconData iconData, String name, String value_1,
+      String value_2) {
     return Expanded(
       child: Container(
         height: 160,
@@ -221,20 +262,39 @@ class _ActivityScreenState extends State<ActivityScreen> {
                   height: 50,
                   width: 60,
                   decoration: BoxDecoration(
-                    color:Colors.white.withOpacity(0.35),
-                    borderRadius: BorderRadius.circular(10)
+                      color: Colors.white.withOpacity(0.35),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Icon(
+                    iconData,
+                    color: Colors.white,
                   ),
-                  child: Icon(iconData,color: Colors.white,),
                 ),
-                Text(name,style: TextStyle(color:Colors.white),),
+                Text(
+                  name,
+                  style: TextStyle(color: Colors.white),
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(value_1,style:TextStyle(color:Colors.white,fontSize: 20,fontWeight: FontWeight.w700),),
-                    SizedBox(width: 3,),
+                    Text(
+                      value_1,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 3),
-                      child: Text(value_2,style:TextStyle(color:Colors.white,fontSize: 13,fontWeight:FontWeight.w600),),
+                      child: Text(
+                        value_2,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600),
+                      ),
                     )
                   ],
                 )

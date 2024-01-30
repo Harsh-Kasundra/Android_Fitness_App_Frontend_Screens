@@ -1,3 +1,4 @@
+import 'package:clg_fitness_app/activity_screen_4.dart';
 import 'package:clg_fitness_app/splash_screen_page.dart';
 import 'package:flutter/material.dart';
 
